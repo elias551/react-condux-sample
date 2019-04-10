@@ -1,4 +1,4 @@
-import { DispatchAction } from "./contextTypes";
+import { DispatchAction } from "./condux";
 
 export interface ContextState {
   currentValue: number;

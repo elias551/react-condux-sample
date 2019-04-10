@@ -1,5 +1,5 @@
 import { ContextState } from "./contextState";
-import { ProduceStateAction } from "./contextTypes";
+import { ProduceStateAction } from "./condux";
 
 export const setValueAction = (value: number) => async (
   produceState: ProduceStateAction<ContextState>,

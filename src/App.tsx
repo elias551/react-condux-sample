@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <AppContextProvider>
+          <AppContextProvider defaultValue={5}>
             <Incrementor />
           </AppContextProvider>
         </header>
