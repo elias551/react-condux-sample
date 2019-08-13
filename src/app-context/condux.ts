@@ -14,10 +14,9 @@ export type ProduceStateAction<State> = <ReturnType>(
 ) => Promise<ReturnType>;
 
 export type SetState<State> = (
-  setStateAction: SetStateAction<State>,
+  setStateAction: (state: State) => void,
   callback: () => void
 ) => void;
-export type SetStateAction<State> = (state: State) => void;
 
 export function produceState<State, ReturnType>(
   setState: SetState<State>,
