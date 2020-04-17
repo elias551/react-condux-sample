@@ -1,10 +1,13 @@
-import { useContext, useCallback } from "react";
-import { AppContext } from "./app-context/context";
-import { incrementAction, decrementAction } from "./app-context/actions";
-import React from "react";
+import { useContext } from "react"
+import {
+  AppContext,
+  incrementAction,
+  decrementAction,
+} from "./app-context/context"
+import React from "react"
 
 export const Incrementor = () => {
-  const context = useContext(AppContext);
+  const context = useContext(AppContext)
 
   return (
     <div>
@@ -16,5 +19,5 @@ export const Incrementor = () => {
         Decrement
       </button>
     </div>
-  );
-};
+  )
+}

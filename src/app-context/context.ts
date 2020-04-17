@@ -1,33 +1,31 @@
-import * as React from "react";
-import { ContextState } from "./contextState";
-import { createDispatch } from "./condux";
+import { buildContext } from "./condux"
 
-export const AppContext = React.createContext({
-  currentValue: 0
-} as ContextState);
-
-interface Props {
-  defaultValue?: number;
+export interface ContextState {
+  currentValue: number
 }
 
-export class AppContextProvider extends React.PureComponent<
-  Props,
-  ContextState
-> {
-  constructor(props: Props) {
-    super(props);
+const condux = buildContext<ContextState>({ currentValue: 5 })
 
-    this.state = {
-      currentValue: props.defaultValue || 0,
+export const AppContext = condux.Context
+export const AppContextProvider = condux.Provider
 
-      dispatch: createDispatch(() => this.state, this.setState.bind(this))
-    };
+export const setValueAction = condux.createAction(
+  (value: number) => async (produceState, getState) => {
+    const state = getState()
+    await produceState((draft) => {
+      draft.currentValue = state.currentValue + value
+    })
   }
+)
 
-  public render() {
-    return React.createElement(AppContext.Provider, {
-      value: this.state,
-      children: this.props.children
-    });
+export const incrementAction = condux.createAction(
+  () => async (_, getState) => {
+    await getState().dispatch(setValueAction(1))
   }
-}
+)
+
+export const decrementAction = condux.createAction(
+  () => async (_, getState) => {
+    await getState().dispatch(setValueAction(-1))
+  }
+)
