@@ -8474,10 +8474,10 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-condux@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-condux/-/react-condux-0.2.0.tgz#b419c7d8abb70eddbe0b91e7ed5ddd10fde9fdcd"
-  integrity sha512-86eZucEMOXBga8yfGY9kdojyQqiQCdnzrprF58A3l2Po55ihd38zkB337zYEk2kLRJfB/ueNN618D8nVVz8HPA==
+react-condux@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-condux/-/react-condux-0.3.0.tgz#2d17e1185b04bc98e76e931809e1479c6c838b83"
+  integrity sha512-uh6ORHJff9n9pajSX0fg+azbsZqT1plvmV+4G/csY4qcBKZK2Wblto2qQaadjSbPnzQ7eNEPfEuWpvDS13nxOA==
   dependencies:
     "@types/react" "^16.9.34"
 
